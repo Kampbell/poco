@@ -60,8 +60,23 @@ before_script:
 
 matrix:
   fast_finish: true
+  
+  
 
   include:
+    - env:    TEST_NAME="Clang 5.0 (CMake android-19)"
+      compiler: gcc
+      script:
+        - sudo apt-get install -qq -y clang-5.0 lldb-5.0 libc++-dev libc++abi-dev
+        - export CLANG_VERSTION="-5.0"
+        - export CC="clang-5.0"
+        - export CXX="clang++-5.0"
+        - $CXX --version
+        - source ./travis/ignored.sh
+        - export POCO_BASE=`pwd`
+        - mkdir cmake-build && cd cmake-build && cmake -DANDROID_PLATFORM=android-19 -DENABLE_PDF=OFF -DENABLE_TESTS=ON .. 
+        - make -s -j2 && ctest -VV -E Data && cd ..
+ 
     - env:    TEST_NAME="gcc 4.9 (make) bundled"
       compiler: gcc
       script:
