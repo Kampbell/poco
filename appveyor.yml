@@ -347,6 +347,7 @@ before_build:
 
 after_build:
   - ps: |
+      if ($lastexitcode -ne 0) { exit $lastexitcode }
       $line='-------------------------------------------------------------------------------------';
       $find='C:\Cygwin\bin\find.exe';
       $arg1="$env:POCO_BASE -type f -name '*.cpp' -exec grep -n -H ";
