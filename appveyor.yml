@@ -346,6 +346,8 @@ before_build:
 
 after_build:
   - ps: |
+      if ($lastexitcode -ne 0) { exit $lastexitcode }
+      
       $line='-------------------------------------------------------------------------------------';
       $find='C:\Cygwin\bin\find.exe';
       $arg1="$env:POCO_BASE -type f -name '*.cpp' -exec grep -n -H ";
@@ -401,6 +403,7 @@ build_script:
           $cmd='bash.exe configure --everything --omit=PDF';iex "& $cmd"
           $cmd='make.exe -s';iex "& $cmd"
       }
+      $LastExitCode=0;
       if ($env:builder -eq "msbuild")
       {
         $logger='"C:\Progra~1\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"';
