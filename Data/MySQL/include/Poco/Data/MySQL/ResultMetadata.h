@@ -18,8 +18,8 @@
 #define Data_MySQL_ResultMetadata_INCLUDED
 
 
+#include "Poco/Data/MySQL/MySQL.h"
 #include "Poco/Data/MetaColumn.h"
-#include <mysql.h>
 #include <vector>
 
 

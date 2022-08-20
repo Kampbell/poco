@@ -20,7 +20,6 @@
 
 #include "Poco/Data/MySQL/MySQL.h"
 #include "Poco/Data/Session.h"
-#include <mysql.h>
 
 
 namespace Poco {

@@ -18,7 +18,6 @@
 
 
 #include "Poco/Data/MySQL/MySQLException.h"
-#include <mysql.h>
 #include <stdio.h>
 
 

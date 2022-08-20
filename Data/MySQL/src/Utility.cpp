@@ -15,7 +15,6 @@
 
 
 #include "Poco/Data/MySQL/Utility.h"
-#include <mysql.h>
 
 
 namespace Poco {
