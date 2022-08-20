@@ -10,7 +10,7 @@
 ifdef POCO_MYSQL_INCLUDE
 INCLUDE += -I$(POCO_MYSQL_INCLUDE)
 else
-INCLUDE += -I./../include -I/usr/local/include/mysql -I/usr/include/mysql/ -I/usr/mysql/include/mysql -I/usr/local/mysql/include -I/usr/local/opt/mysql-client/include
+INCLUDE += -I./../include -I/usr/local/include/mysql -I/usr/include/mysql/ -I/usr/mysql/include/mysql -I/usr/local/mysql/include -I/usr/local/opt/mysql-client/include -I/usr/local/opt/mysql-client/include/mysql  
 endif
 
 ifdef POCO_MYSQL_LIB
